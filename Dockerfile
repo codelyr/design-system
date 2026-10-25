@@ -9,7 +9,7 @@ COPY . .
 RUN npm run build-storybook
 
 # ── Runtime ───────────────────────────────────────────────────────────────────
-FROM nginx:1.27-alpine
+FROM nginx:1.30-alpine
 
 COPY --from=builder /app/storybook-static /usr/share/nginx/html
 COPY infra/nginx.conf /etc/nginx/conf.d/default.conf
